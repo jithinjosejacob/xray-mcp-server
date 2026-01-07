@@ -1,0 +1,313 @@
+[
+  {
+    "id": "user-authentication",
+    "uri": "features/authentication.feature",
+    "keyword": "Feature",
+    "name": "User Authentication",
+    "description": "As a user\nI want to authenticate with the system\nSo that I can access my account",
+    "line": 1,
+    "elements": [
+      {
+        "id": "user-authentication;successful-login-with-valid-credentials",
+        "keyword": "Scenario",
+        "name": "Successful login with valid credentials",
+        "description": "",
+        "line": 6,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the login page",
+            "line": 7,
+            "match": {
+              "location": "steps/authentication_steps.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1234567890
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I enter username \"john.doe@example.com\"",
+            "line": 8,
+            "match": {
+              "location": "steps/authentication_steps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 234567890
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter password \"SecurePass123\"",
+            "line": 9,
+            "match": {
+              "location": "steps/authentication_steps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 123456789
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click the login button",
+            "line": 10,
+            "match": {
+              "location": "steps/authentication_steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2345678901
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be redirected to the dashboard",
+            "line": 11,
+            "match": {
+              "location": "steps/authentication_steps.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 345678901
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I should see a welcome message",
+            "line": 12,
+            "match": {
+              "location": "steps/authentication_steps.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 123456789
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-authentication;login-with-invalid-password",
+        "keyword": "Scenario",
+        "name": "Login with invalid password",
+        "description": "",
+        "line": 14,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the login page",
+            "line": 15,
+            "match": {
+              "location": "steps/authentication_steps.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 987654321
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I enter username \"john.doe@example.com\"",
+            "line": 16,
+            "match": {
+              "location": "steps/authentication_steps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 234567890
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter password \"WrongPassword\"",
+            "line": 17,
+            "match": {
+              "location": "steps/authentication_steps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 123456789
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click the login button",
+            "line": 18,
+            "match": {
+              "location": "steps/authentication_steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1234567890
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see an error message \"Invalid username or password\"",
+            "line": 19,
+            "match": {
+              "location": "steps/authentication_steps.js:40"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 456789012,
+              "error_message": "AssertionError: Expected error message not found\n  Expected: \"Invalid username or password\"\n  Actual: \"Login failed\"\n    at Context.<anonymous> (steps/authentication_steps.js:42:18)"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I should remain on the login page",
+            "line": 20,
+            "match": {
+              "location": "steps/authentication_steps.js:45"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-authentication;login-with-empty-credentials",
+        "keyword": "Scenario",
+        "name": "Login with empty credentials",
+        "description": "",
+        "line": 22,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@validation",
+            "line": 21
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the login page",
+            "line": 23,
+            "match": {
+              "location": "steps/authentication_steps.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 876543210
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click the login button without entering credentials",
+            "line": 24,
+            "match": {
+              "location": "steps/authentication_steps.js:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 345678901
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see validation errors for both fields",
+            "line": 25,
+            "match": {
+              "location": "steps/authentication_steps.js:55"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 234567890
+            }
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "name": "@authentication",
+        "line": 0
+      },
+      {
+        "name": "@smoke",
+        "line": 0
+      }
+    ]
+  },
+  {
+    "id": "shopping-cart",
+    "uri": "features/shopping_cart.feature",
+    "keyword": "Feature",
+    "name": "Shopping Cart Management",
+    "description": "As a customer\nI want to manage items in my shopping cart\nSo that I can purchase products",
+    "line": 1,
+    "elements": [
+      {
+        "id": "shopping-cart;add-product-to-cart",
+        "keyword": "Scenario",
+        "name": "Add product to cart",
+        "description": "",
+        "line": 6,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am viewing a product \"Laptop Computer\"",
+            "line": 7,
+            "match": {
+              "location": "steps/cart_steps.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1234567890
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click \"Add to Cart\"",
+            "line": 8,
+            "match": {
+              "location": "steps/cart_steps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 987654321
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "the cart should contain 1 item",
+            "line": 9,
+            "match": {
+              "location": "steps/cart_steps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 345678901
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "the cart total should be \"$999.99\"",
+            "line": 10,
+            "match": {
+              "location": "steps/cart_steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 234567890
+            }
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "name": "@shopping",
+        "line": 0
+      }
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Login Test Suite" tests="5" failures="2" errors="0" skipped="1" time="12.456" timestamp="2024-01-15T10:30:00">
+  <properties>
+    <property name="environment" value="QA"/>
+    <property name="browser" value="Chrome"/>
+  </properties>
+
+  <testcase classname="com.example.auth.LoginTest" name="testSuccessfulLogin" time="2.345">
+    <system-out>
+      User logged in successfully with valid credentials
+      Session ID: abc123xyz
+    </system-out>
+  </testcase>
+
+  <testcase classname="com.example.auth.LoginTest" name="testInvalidPassword" time="1.892">
+    <failure message="Expected error message not displayed" type="AssertionError">
+      AssertionError: Expected error message not displayed
+      at com.example.auth.LoginTest.testInvalidPassword(LoginTest.java:45)
+      Expected: "Invalid password"
+      Actual: ""
+    </failure>
+    <system-out>
+      Test failed: Error message validation
+    </system-out>
+  </testcase>
+
+  <testcase classname="com.example.auth.LoginTest" name="testEmptyUsername" time="1.234">
+    <system-out>
+      Validation error displayed correctly for empty username
+    </system-out>
+  </testcase>
+
+  <testcase classname="com.example.auth.LoginTest" name="testAccountLockout" time="3.567">
+    <failure message="Account not locked after 5 failed attempts" type="AssertionError">
+      AssertionError: Account not locked after 5 failed attempts
+      at com.example.auth.LoginTest.testAccountLockout(LoginTest.java:78)
+      Expected account status: LOCKED
+      Actual account status: ACTIVE
+    </failure>
+    <system-out>
+      Failed login attempts: 5
+      Account should be locked but remains active
+    </system-out>
+  </testcase>
+
+  <testcase classname="com.example.auth.LoginTest" name="testPasswordReset" time="2.418">
+    <skipped message="Feature not yet implemented in QA environment"/>
+    <system-out>
+      Test skipped: Password reset feature disabled in QA
+    </system-out>
+  </testcase>
+</testsuite>
